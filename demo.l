@@ -1,0 +1,18 @@
+onedrive/desktp/
+%{
+	#include<stdio.h>
+	int cnt=0;
+%}
+
+%%
+[a-zA-Z0-9]* {cnt++;}
+"\n"	{printf("no of words:%d", cnt);}
+%%
+
+int yywrap(){}
+
+int main()
+{
+	yylex();
+	return 0;
+}
